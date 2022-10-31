@@ -35,6 +35,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterVh>
     public void onBindViewHolder(@NonNull ItemAdapterVh holder, int position) {
         ItemModel itemModel = itemModelList.get(position);
         String title = itemModel.getTitle();
+        String description = itemModel.getDescription();
+        String thumbnail = itemModel.getThumbnail();
+
+        holder.title.setText(title);
     }
 
     @Override
