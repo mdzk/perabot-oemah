@@ -21,6 +21,6 @@
         app:menu="@menu/bottomnavigation_menu"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        app:itemIconTint="@color/black"
+        app:itemIconTint="@drawable/state_nav"
         app:labelVisibilityMode="unlabeled"/>
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.dzaky.perabotoemah;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterVh>
 
     public List<ItemModel> itemModelList = new ArrayList<>();
     public Context context;
+    public ItemClickListener itemClickListener;
 
-    public ItemAdapter(List<ItemModel> itemModels, Context context) {
+    public interface ItemClickListener {
+        void selectedItem(ItemModel itemModel);
+    }
+
+    public ItemAdapter(List<ItemModel> itemModels, Context context, ItemClickListener itemClickListener) {
         this.itemModelList = itemModels;
         this.context = context;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -38,7 +45,15 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterVh>
         String description = itemModel.getDescription();
         String thumbnail = itemModel.getThumbnail();
 
-        holder.title.setText(title);
+        holder.itemTitle.setText(title);
+        holder.itemDescription.setText(description);
+        holder.itemThumbnail.setImageDrawable(Drawable.createFromPath(thumbnail));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemClickListener.selectedItem(itemModel);
+            }
+        });
     }
 
     @Override

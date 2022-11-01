@@ -1,6 +1,8 @@
 package com.dzaky.perabotoemah;
 
-public class ItemModel {
+import java.io.Serializable;
+
+public class ItemModel implements Serializable {
 
     private String title;
     private String description;

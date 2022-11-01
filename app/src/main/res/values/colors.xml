@@ -13,4 +13,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorNavigationIcon">#dae9f6</color>
     <color name="colorNavigationText">#ffffff</color>
+    <color name="tintColor">#51DE9A</color>
 </resources>
