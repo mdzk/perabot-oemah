@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewPerabotOemah"
         tools:targetApi="31">
+
         <activity
             android:name=".ItemDetailActivity"
             android:exported="false">
